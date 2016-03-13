@@ -14,6 +14,7 @@ gem "devise"
 gem "rspec-rails"
 gem "fabrication"
 gem "cancancan", "~> 1.10"
+gem "kaminari"
 
 group :development, :test do
   gem "byebug"
