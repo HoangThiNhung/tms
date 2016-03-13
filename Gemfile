@@ -13,6 +13,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "devise"
 gem "rspec-rails"
 gem "fabrication"
+gem "cancancan", "~> 1.10"
 
 group :development, :test do
   gem "byebug"
