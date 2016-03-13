@@ -11,7 +11,97 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313090331) do
+ActiveRecord::Schema.define(version: 20160313101602) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.string   "content"
+    t.boolean  "is_correct"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "course_details", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "course_details", ["course_id"], name: "index_course_details_on_course_id"
+  add_index "course_details", ["user_id"], name: "index_course_details_on_user_id"
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.float    "duration"
+    t.integer  "number_question"
+    t.float    "percent"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "exams", ["course_id"], name: "index_exams_on_course_id"
+  add_index "exams", ["user_id"], name: "index_exams_on_user_id"
+
+  create_table "posts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "course_id"
+    t.integer  "question_type"
+    t.string   "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "questions", ["course_id"], name: "index_questions_on_course_id"
+
+  create_table "results", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "exam_id"
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.float    "spent_time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "score_finals", force: :cascade do |t|
+    t.integer  "course_detail_id"
+    t.float    "score"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "exam_id"
+    t.float    "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
