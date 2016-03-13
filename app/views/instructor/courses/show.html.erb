@@ -1,0 +1,17 @@
+<% provide :title, @course.name %>
+<div class="row">
+  <aside class="col-md-3">
+    <section class="course_info">
+      <h2>
+        <%= @course.name %>
+      </h2>
+    </section>
+    <section class="instructor_info">
+      <p>Instructor: <%= @course.user.name %>
+      <p>Email: <%= @course.user.email %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h1> Course Description </h1>
+  </div>
+</div>

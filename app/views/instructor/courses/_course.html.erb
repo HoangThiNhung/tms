@@ -1,0 +1,15 @@
+<tr>
+  <td class="col-md-06">
+    <%= link_to course.name, instructor_course_path(course) %>
+  </td>
+  <td class="col-md-3">
+    <%= course.user.name %>
+  </td>
+  <td class="col-md-03">
+    <% if current_user.instructor? %>
+    <i class="glyphicon glyphicon-trash"></i>
+      <%= link_to "delete", instructor_course_path(course), method: :delete,
+      data: {confirm: "delete course?"} %>
+    <% end %>
+  </td>
+</tr>

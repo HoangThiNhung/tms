@@ -1,0 +1,20 @@
+<% provide :title, "List course" %>
+<h1 class="shadow">List course</h1>
+<h3>
+  <%= link_to new_instructor_course_path, class: "pull-right" do %>
+    <span class="glyphicon glyphicon-plus"></span>new
+  <% end %>
+</h3>
+<br>
+<br>
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+      <th>Course name</th>
+      <th>Instructor</th>
+      <th>Action</th>
+    </tr>
+    <%= render @courses %>
+  </table>
+  <center><%= paginate @courses %></center>
+</div>

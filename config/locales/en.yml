@@ -32,3 +32,9 @@ en:
   layouts:
     courses: "Course"
     sing_in: "Sign in"
+  course:
+    flash:
+      create_success: "Create course successfully"
+      create_fail: "Create course failure"
+      update_success: "Update course successfully"
+      delete_success: "Delete course successfully"
