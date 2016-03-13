@@ -1,0 +1,92 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+head{
+  background: #819FF7 !important;
+}
+
+body {
+  padding-top: 90px;
+  padding-left: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+#navigator {
+  background-color: #d9e6f2;
+  border-color: #e7e7e7;
+  height: 80px;
+  .link-header{
+    color:#2E9AFE;
+    padding-top:0px;
+  }
+}
+
+#logo {
+  float: left;
+  color: #777;
+  font-size: 20px;
+  padding-top: 10px;
+  margin-left: -80px;
+  text-decoration: none;
+}
+
+#footer {
+  border-top: 1px solid #E1E1E1;
+  .about {
+    float: right;
+    margin-top: -30px;
+    color: #777;
+  }
+}
+
+#flash-message {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+}
+
+#main-menu {
+  position: absolute;
+  bottom: 0px;
+  left: 6px;
+  margin-right: -500px;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      list-style-type: none;
+      margin: 0px 2px 0px 0px;
+      padding: 0;
+      white-space: nowrap;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background: #759FCF;
+        a {
+          color: #fff;
+        }
+        ul {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      a {
+        display: block;
+        color: #555;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0;
+        padding: 4px 10px;
+        &.selected {
+          background: #fff;
+          color: #555;
+        }
+      }
+    }
+  }
+}

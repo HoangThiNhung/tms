@@ -29,3 +29,6 @@ en:
       leave_blank: "leave blank if you don't want to change it"
       current_password: "we need your current password to confirm your changes"
       cancel_account: "Cancel my account"
+  layouts:
+    courses: "Course"
+    sing_in: "Sign in"

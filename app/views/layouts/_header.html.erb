@@ -1,0 +1,24 @@
+<header class="navbar navbar-fixed-top navbar-inverse" id="navigator">
+  <div class="container">
+    <%= link_to "TMS", root_path, id: "logo" %>
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("session.link.sign_out"), destroy_user_session_path, method: :delete,
+          class: "link-header" %>
+        </li>
+      </ul>
+      <div id="main-menu">
+        <ul class="payslip">
+          <li><%= link_to t("layouts.courses"), "#",
+            class: ("selected" if ["courses"].include? controller_name) %>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("layouts.sign_in"), new_user_session_path,
+          class: "link-header" %>
+      </ul>
+    <% end %>
+  </div>
+</header>
