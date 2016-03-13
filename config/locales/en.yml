@@ -1,23 +1,31 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  users:
+    confirmation:
+      resent_contruction: "Resend confirmation instructions"
+    mailer:
+      welcome: "Welcome "
+      content: "You can confirm your account email through the link below:"
+      link: "Confirm my account"
+      hello: "Hello "
+      password: "We're contacting you to notify you that your password has been changed."
+      reset_content: "Someone has requested a link to change your password. You can do this through the link below."
+      link_change: "Change my password"
+      if_not: "If you didn't request this, please ignore this email."
+      wont_change: "Your password won't change until you access the link above and create a new one."
+      unlock_content: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+      unlock_click_me: "Click the link below to unlock your account:"
+      unlock_link: "Unlock my account"
+    passwords:
+      change: "Change your password"
+      new: "New password"
+      minimum: "characters minimum"
+      confirm: "Confirm new password"
+      change_my_password: "Change my password"
+      forgot: "Forgot your password?"
+      sent_reset_password: "Send me reset password instructions"
+    regitrations:
+      edit: "Edit"
+      waiting: "Currently waiting confirmation for: "
+      leave_blank: "leave blank if you don't want to change it"
+      current_password: "we need your current password to confirm your changes"
+      cancel_account: "Cancel my account"
